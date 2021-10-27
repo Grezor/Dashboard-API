@@ -11,12 +11,13 @@
 <div class="album py-5" id="france">
 	<div class="container">
 		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-    	{% for repo in repos %}
+    	{% for issue in issues %}
         	<div class="col">
 				<div class="card shadow-sm h-100">
 					<div class="card-body">
-						<h5 class="card-title">{{ repo.name }}</h5>
-						<p class="card-text">{{ repo.description }}</p>
+					
+						{# <h5 class="card-title">{{ repo.name }}</h5>
+						<p class="card-text">{{ repo.description }}</p> #}
 						</div>
 					</div>
 				</div>
