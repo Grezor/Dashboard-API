@@ -17,9 +17,12 @@
 					<div class="card-body">
 						<h5 class="card-title">{{ repo.title }}</h5>
 						<p class="card-text">{{ repo.repository_url }}</p>
-						</div>
+						{% for label in repo.labels %}
+							<span class="badge bg-primary float-right">{{ label.name }}</span>
+						{% endfor %}
 					</div>
 				</div>
+			</div>
     	{% endfor %}
 		</div>
 	</div>
