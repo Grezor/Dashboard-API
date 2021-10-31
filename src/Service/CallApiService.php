@@ -12,10 +12,29 @@ class CallApiService {
     {
         $this->client = $client;
     }
-
-    public function getData(): array
+    
+    public function getAllRepository(): array
     {
-        $response = $this->client->request('GET', 'https://api.github.com/users/grezor/repos?&type=all&direction=desc&per_page=100');
+        return $this->getApi('/users/grezor/repos?&type=all&direction=desc&per_page=100');
+    }
+
+    public function getAllIssues(): array
+    {
+        return $this->getApi('/issues?state=all');
+    }
+
+    public function getAllStars(): array
+    {
+        return $this->getApi('/users/grezor/starred?&per_page=100');
+    }
+
+    private function getApi(string $url)
+    {
+        $response = $this->client->request('GET', 'https://api.github.com' . $url, [
+                'auth_basic' => ['Grezor', $_ENV['KEY_GITHUB'] ],
+            ]
+        );
+    
         return $response->toArray();
     }
 }
