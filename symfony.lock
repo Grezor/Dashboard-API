@@ -88,9 +88,6 @@
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.5"
     },
-    "graham-campbell/result-type": {
-        "version": "v1.0.3"
-    },
     "laminas/laminas-code": {
         "version": "4.4.3"
     },
@@ -117,9 +114,6 @@
     },
     "phpdocumentor/type-resolver": {
         "version": "1.5.1"
-    },
-    "phpoption/phpoption": {
-        "version": "1.8.0"
     },
     "phpspec/prophecy": {
         "version": "1.14.0"
@@ -616,9 +610,6 @@
     },
     "twig/twig": {
         "version": "v3.3.3"
-    },
-    "vlucas/phpdotenv": {
-        "version": "v5.3.1"
     },
     "webmozart/assert": {
         "version": "1.10.0"
