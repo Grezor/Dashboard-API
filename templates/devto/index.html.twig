@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Github profile{% endblock %}
+
+{% block body %}
+<style>
+a {
+  color: black; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+</style>
+
+<div class="album py-5" id="france">
+	<div class="container">
+		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+			{% for repo in articles %}
+			<div class="col">
+				<div class="card shadow-sm h-100">
+					<div class="card-body">
+						<h5 class="card-title"><a href="{{ repo.article.url }}">{{ repo.article.title }}</a></h5>
+						{% for topic in repo.article.tags|split(' ') %}
+							<span class="badge bg-primary float-right">{{ topic }}</span>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+
+{% endblock %}
