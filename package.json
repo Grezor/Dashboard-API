@@ -10,6 +10,7 @@
     "license": "UNLICENSED",
     "private": true,
     "scripts": {
+        "update": "npm outdated && npm update && composer update && composer install",
         "dev-server": "encore dev-server",
         "dev": "encore dev",
         "watch": "encore dev --watch",

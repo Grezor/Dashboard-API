@@ -17,14 +17,22 @@ a {
 			<div class="col">
 				<div class="card shadow-sm h-100">
 					<div class="card-body">
-						<h5 class="card-title"><a href="{{ repo.article.url }}">{{ repo.article.title }}</a></h5>
-						{% for topic in repo.article.tags|split(' ') %}
+					{% if repo.article.cover_image == false %}
+						<img src="https://via.placeholder.com/369x155?text=No+Image" class="card-img-top" alt="{{ repo.article.title }}">
+					{% else  %}
+						<img src="{{ repo.article.cover_image }}" class="card-img-top" alt="...">
+					{% endif %}
+						<h5 class="card-title mt-3"><a href="{{ repo.article.url }}">{{ repo.article.title }}</a></h5>
+						{% for topic in repo.article.tags|split(', ') %}
 							<span class="badge bg-primary float-right">{{ topic }}</span>
 						{% endfor %}
 					</div>
 				</div>
 			</div>
 			{% endfor %}
+		</div>
+		<div class="mt-5">
+			{{ knp_pagination_render(articles) }}
 		</div>
 	</div>
 </div>
