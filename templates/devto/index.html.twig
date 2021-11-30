@@ -4,10 +4,12 @@
 
 {% block body %}
 <style>
-a {
-  color: black; /* blue colors for links too */
-  text-decoration: inherit; /* no underline */
-}
+	a {
+		color: black;
+		/* blue colors for links too */
+		text-decoration: inherit;
+		/* no underline */
+	}
 </style>
 
 <div class="album py-5" id="france">
@@ -15,17 +17,24 @@ a {
 		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 			{% for repo in articles %}
 			<div class="col">
-				<div class="card shadow-sm h-100">
-					<div class="card-body">
-					{% if repo.article.cover_image == false %}
-						<img src="https://via.placeholder.com/369x155?text=No+Image" class="card-img-top" alt="{{ repo.article.title }}">
-					{% else  %}
+				<div class="card h-100 border-left-success">
+					<div class="card-body ">
+						{% if repo.article.cover_image == false %}
+						<img src="https://via.placeholder.com/369x155?text=No+Image" class="card-img-top"
+							alt="{{ repo.article.title }}">
+						{% else  %}
 						<img src="{{ repo.article.cover_image }}" class="card-img-top" alt="...">
-					{% endif %}
+						{% endif %}
 						<h5 class="card-title mt-3"><a href="{{ repo.article.url }}">{{ repo.article.title }}</a></h5>
+						<p>{{ repo.article.description }}</p>
 						{% for topic in repo.article.tags|split(', ') %}
-							<span class="badge bg-primary float-right">{{ topic }}</span>
+						<span class="badge bg-primary float-right">{{ topic }}</span>
 						{% endfor %}
+						<hr>
+						<a class="nav-link" href="https://github.com/{{ repo.article.user.github_username }}"
+							target="_blank">
+							<img src="/img/github.png" class="" alt="">
+						</a>
 					</div>
 				</div>
 			</div>
