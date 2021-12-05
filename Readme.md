@@ -37,7 +37,7 @@ API_KEY_GITHUB=""
 
 #### Get all reading list
 
-```http
+```
   GET /readinglist?username={username}&per_page=100
 ```
 [more infos](https://developers.forem.com/api/#operation/getReadinglist)
@@ -47,7 +47,7 @@ API_KEY_GITHUB=""
 
 #### Get stars github
 
-```http
+```
   GET /users/{username}/starred?&per_page=100
 ```
 
