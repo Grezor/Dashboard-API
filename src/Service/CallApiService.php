@@ -7,10 +7,12 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 class CallApiService {
 
     private $client;
+    private $apiKeyGithub;
 
-    public function __construct(HttpClientInterface $client)
+    public function __construct(HttpClientInterface $client, string $apiKeyGithub)
     {
         $this->client = $client;
+        $this->apiKeyGithub = $apiKeyGithub;
     }
     
     public function getAllRepository(): array
@@ -31,10 +33,9 @@ class CallApiService {
     private function getApi(string $url)
     {
         $response = $this->client->request('GET', 'https://api.github.com' . $url, [
-                'auth_basic' => ['Grezor', $_ENV['KEY_GITHUB'] ],
+                'auth_basic' => ['Grezor', $this->apiKeyGithub ],
             ]
         );
-    
         return $response->toArray();
     }
 }

@@ -8,13 +8,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class IssuesController extends AbstractController
 {  
+
     #[Route('/issues', name: 'issues')]
     public function index(CallApiService $callApiService): Response
     {
         return $this->render('home/issue.html.twig', [
             'issues' => $callApiService->getAllIssues()
         ]);
-        dd($callApiService->getAllIssues());
     }
 }
 

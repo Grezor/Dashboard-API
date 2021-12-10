@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Feed Symfony{% endblock %}
+
+{% block body %}
+
+
+<div class="album py-5" id="france">
+	<div class="container">
+		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        		{% for feed in rss %}
+
+                    {{ feed.title }}
+                    <br>
+                    {% for item in feed.item %}
+                            <p class="">{{ item }}</p>
+                    {% endfor %}
+                    <br>
+                    
+        	{% endfor %}
+		</div>
+
+	</div>
+</div>
+
+{% endblock %}

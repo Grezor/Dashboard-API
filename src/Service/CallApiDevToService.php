@@ -5,9 +5,13 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class CallApiDevToService {
 
-    public function __construct(HttpClientInterface $client)
+    private $client;
+    private $apiKeyDevTo;
+
+    public function __construct(HttpClientInterface $client, string $apiKeyDevTo)
     {
         $this->client = $client;
+        $this->apiKeyDevTo = $apiKeyDevTo;
     }
 
     public function getAllReadingList(): array
@@ -19,7 +23,7 @@ class CallApiDevToService {
     {
         $response = $this->client->request('GET', 'https://dev.to/api' . $url, [
             'headers' => [
-                'api-key' => $_ENV['KEY_DEVTO'],
+                'api-key' => $this->apiKeyDevTo,
             ],
         ]);
         return $response->toArray();
