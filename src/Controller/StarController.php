@@ -12,7 +12,7 @@ class StarController extends AbstractController
     #[Route('/stars', name: 'stars')]
     public function index(CallApiService $callApiService): Response
     {
-        return $this->render('home/stars.html.twig', [
+        return $this->render('github/stars.html.twig', [
             'stars' => $callApiService->getAllStars()
         ]);
     }

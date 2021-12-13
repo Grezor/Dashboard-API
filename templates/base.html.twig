@@ -18,14 +18,14 @@
 	<body>
 		<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="/">API GITHUB</a>
+				<a class="navbar-brand" href="{{ path('dashboard') }}">API GITHUB</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarsExampleDefault">
 					<ul class="navbar-nav me-auto mb-2 mb-md-0">
 						<li class="nav-item active">
-							<a class="nav-link" aria-current="page" href="{{ path('home') }}">Repository</a>
+							<a class="nav-link" aria-current="page" href="{{ path('all_repos_github') }}">Repository</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="{{ path('issues') }}">Issues</a>
@@ -33,11 +33,9 @@
 						<li class="nav-item">
 							<a class="nav-link" href="{{ path('stars') }}">Stars</a>
 						</li>
-
 						<li class="nav-item">
 							<a class="nav-link" href="{{ path('feed') }}">SymfonyBlog</a>
 						</li>
-
 						<li class="nav-item">
 							<a class="nav-link" href="{{ path('starsdevto') }}">Stars Dev.to</a>
 						</li>

@@ -9,11 +9,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HomeController extends AbstractController
 {
-    #[Route('/', name: 'home')]
+    #[Route('/', name: 'dashboard')]
     public function index(CallApiService $callApiService): Response
     {
-        return $this->render('home/index.html.twig', [
-            'repos' => $callApiService->getAllRepository()
+        return $this->render('home/dashboard.html.twig', [
+            'reposistory' => $callApiService->getAllRepository(),
+            'issues' => $callApiService->getAllIssues()
         ]);
     }
 }
