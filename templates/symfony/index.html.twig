@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Symfony Blog{% endblock %}
+
+{% block body %}
+
+<div class="album py-5" id="france">
+	<div class="container">
+		<h2>Feed Symfony</h2>
+		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    	{% for feed in feeds %}
+        	<div class="col">
+				<div class="card shadow-sm h-100">
+					<div class="card-body">
+						<h5 class="card-title">{{ feed.title }}</h5>
+						<a href="{{ feed.link }}" target="_blank">Lire l'article</a>
+					</div>
+				</div>
+			</div>
+    	{% endfor %}
+		</div>
+	</div>
+</div>
+
+{% endblock %}

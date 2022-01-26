@@ -9,38 +9,40 @@
         <div class="row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             <h1>Dashboard</h1>
         </div>
-            <div class="row">
-                <div class="col-sm-4 py-2">
-                    <div class="card h-100 border-primary border-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Github</h5>
-                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">issues {% set issues = issues|length %}</li>
-                                <li class="list-group-item">repository {% set reposistory = reposistory|length %}</li>
-                                {# <li class="list-group-item">star {% set tasks_count = tasks|length %}</li> #}
-                            </ul>
-                        </div>
+        <div class="row">
+            <div class="col-sm-4 py-2">
+                <div class="card h-100 border-primary border-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Github</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">issues {% set issues = issues|length %}</li>
+                            <li class="list-group-item">repository {% set reposistory = reposistory|length %}</li>
+                            {# <li class="list-group-item">star {% set tasks_count = tasks|length %}</li> #}
+                        </ul>
                     </div>
                 </div>
-                <div class="col-sm-4 py-2">
-                    <div class="card h-100 border-primary border-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
+            </div>
+            <div class="col-sm-4 py-2">
+                <div class="card h-100 border-primary border-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
-                 <div class="col-sm-4 py-2">
-                    <div class="card h-100 border-primary border-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
+            </div>
+            <div class="col-sm-4 py-2">
+                <div class="card h-100 border-primary border-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        {% endblock %}
+    {% endblock %}

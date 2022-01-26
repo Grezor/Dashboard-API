@@ -13,15 +13,15 @@ class CallFeedService {
         $this->client = $client;
     }
 
-    public function getAllFeed(): array
-    {
-        return $this->getApiFeed('/symfony/blog');
-    }
+    // public function getAllFeed(): array
+    // {
+    //     return $this->getApiFeed('/symfony/blog');
+    // }
 
-    private function getApiFeed(string $url)
-    {
-        $response = $this->client->request('GET', 'https://feeds.feedburner.com' . $url);
+    // private function getApiFeed(string $url)
+    // {
+    //     $response = $this->client->request('GET', 'https://feeds.feedburner.com' . $url);
     
-        return $response->toArray();
-    }
+    //     return $response->toArray();
+    // }
 }
