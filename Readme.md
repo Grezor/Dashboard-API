@@ -60,12 +60,14 @@ API_KEY_GITHUB=""
 ```
 comming soon : wiki page
 ```
-## Demo
-```
-When the project is stable it will be possible to see it
-```
 
 ## Features
 
 - Light/dark mode toggle
 - Live previews
+
+
+## Pages : 
+- issues github
+- start devto
+- symfony blog
