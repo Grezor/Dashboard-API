@@ -14,7 +14,30 @@ class CallApiService {
         $this->client = $client;
         $this->apiKeyGithub = $apiKeyGithub;
     }
-    
+
+    public function getCountTrafficRepository()
+    {   
+        $count = [];
+        $t = $this->getNameRepository();
+        foreach ($t as $a ) {
+            $result = $this->getApi('/repos/grezor/'. $a.'/traffic/views');
+        }
+        dd($result);
+        return $result;
+    }
+
+    public function getNameRepository()
+    {
+        $dataArray = [];
+        $array = $this->getApi('/users/grezor/repos?&type=public&direction=desc&per_page=100');
+
+        foreach(array_values($array) as $t) {
+            $dataArray[] = $t['name'];
+        }
+
+        return $dataArray;
+    }
+
     public function getAllRepository(): array
     {
         return $this->getApi('/users/grezor/repos?&type=all&direction=desc&per_page=100');
