@@ -21,12 +21,10 @@ class CallApiService {
         $t = $this->getNameRepository();
 
         foreach ($t as $a) {
-            foreach ($a as $key => $value) {
-                dd($value);
-            }
-            // $count[] = $this->getApi('/repos/grezor/'. $a .'/traffic/views');           
+            $countRepo[$a] = $this->getApi('/repos/grezor/'. $a .'/traffic/views?&per=week');
+            $count[$a] = $countRepo['count'] ?? 0 ;
         }
-        return $count;
+        return $countRepo;
     }
 
     public function getNameRepository()
