@@ -6,7 +6,7 @@ use Symfony\Contracts\Cache\ItemInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 
-class CallSymfonyBlogService {
+class CallApiSymfonyServvice {
 
     private HttpClientInterface $client;
 
@@ -21,6 +21,7 @@ class CallSymfonyBlogService {
         $response = $cache->get('symfony_feed', function (ItemInterface $item) {
             $item->expiresAfter(3600);
             $data = $this->client->request('GET', 'https://feeds.feedburner.com/symfony/blog');
+            
             return $data->getContent();
         });
         return $response;

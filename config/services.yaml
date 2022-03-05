@@ -20,7 +20,7 @@ services:
             - '../src/Kernel.php'
             - '../src/Tests/'
 
-    App\Service\CallApiService:
+    App\Service\CallApiGithubService:
       bind:
           $apiKeyGithub: '%env(API_KEY_GITHUB)%'
 
