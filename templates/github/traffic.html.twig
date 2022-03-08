@@ -5,16 +5,17 @@
 {% block body %}
 <div class="album py-5" id="france">
 	<div class="container">
+	<h1>Total project {{ traffic|length }}(public) </h1>
 		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-			{% for star in traffic %}
-			dd(traffic)
-        	{# <div class="col">
+			{% for nameRepository, visitor in traffic %}
+        	<div class="col">
 				<div class="card shadow-sm h-100">
 					<div class="card-body">
-						<h5 class="card-title">{{ star }}</h5>
+						<h5 class="card-title">{{ nameRepository }} - {{ visitor.count }} </h5>
+						<h5>visitor.uniques: {{ visitor.uniques }}</h5>
 					</div>
 				</div>
-			</div> #}
+			</div>
     	{% endfor %}
 		</div>
 	</div>

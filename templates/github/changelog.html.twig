@@ -1,18 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Symfony Blog{% endblock %}
+{% block title %}Api dashboard - Github changelog{% endblock %}
 
 {% block body %}
 
 <div class="album py-5" id="france">
 	<div class="container">
-		<h2 class="mb-3">Feed Symfony</h2>
+		<a href="https://github.blog/changelog/"><h2>Feed Github Changelog</h2></a>
 		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
     	{% for feed in feeds %}
         	<div class="col">
 				<div class="card shadow-sm h-100">
 					<div class="card-body">
 						<h5 class="card-title">{{ feed.title }}</h5>
+						<p>{{ feed.pubDate|date("d/m/Y") }}</p>
 						<a href="{{ feed.link }}" target="_blank">Lire l'article</a>
 					</div>
 				</div>
