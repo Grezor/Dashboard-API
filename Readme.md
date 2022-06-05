@@ -17,6 +17,11 @@ Install my-project with github
   composer update
 ```
     
+
+## Start Project 
+```bash
+symfony server:start
+```
 ## Environment Variables
 
 To use this project, you will need to add the following environment variables to your .env.local file

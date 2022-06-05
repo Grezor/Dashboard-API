@@ -6,7 +6,7 @@ use Symfony\Contracts\Cache\ItemInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 
-class CallApiSymfonyServvice {
+class CallApiSymfonyService {
 
     private HttpClientInterface $client;
 
@@ -15,7 +15,7 @@ class CallApiSymfonyServvice {
         $this->client = $client;
     }
 
-    public function getAllData(): string
+    public function getAllDataBlog(): string
     {
         $cache = new FilesystemAdapter();
         $response = $cache->get('symfony_feed', function (ItemInterface $item) {
