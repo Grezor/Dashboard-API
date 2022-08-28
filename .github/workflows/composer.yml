@@ -1,5 +1,4 @@
 name: Bundle test
-
 on:
   push: ~
   pull_request:

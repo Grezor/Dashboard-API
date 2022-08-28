@@ -6,7 +6,7 @@ use Symfony\Contracts\Cache\ItemInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 
-class CallApiSymfonyServvice {
+class CallApiSymfonyService {
 
     private HttpClientInterface $client;
 
